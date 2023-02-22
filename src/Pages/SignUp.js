@@ -23,6 +23,9 @@ const SignUp = () => {
     // console.log(input);
     const { name, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
+    if (!name == "") {
+      setInput({ ...input, CheckBox: false });
+    }
     setInput((prevValue) => {
       return {
         ...prevValue,
@@ -66,6 +69,7 @@ const SignUp = () => {
         [name]: "",
       });
     }
+
     setDisableBtn(
       !(
         input.Name &&
@@ -83,13 +87,13 @@ const SignUp = () => {
   }
   function signUpHandler(event) {
     event.preventDefault();
-    if (!input.CheckBox) {
-      setErrorMessage({
-        ...errorMessage,
-        agree: "You must agree to the terms and conditions.",
-      });
-      return;
-    }
+    // if (!input.CheckBox) {
+    //   setErrorMessage({
+    //     ...errorMessage,
+    //     agree: "You must agree to the terms and conditions.",
+    //   });
+    //   return;
+    // }
     setInput({
       Name: "",
       UserName: "",
@@ -107,7 +111,7 @@ const SignUp = () => {
     setDisableBtn(true);
     alert("Successfully registered");
   }
-  console.log(errorMessage);
+  console.log(input);
   return (
     <div className="container">
       <div className="leftDiv">
@@ -120,118 +124,27 @@ const SignUp = () => {
         </div>
       </div>
       <div className="rightDiv">
-        <div className="createAccountDiv">
-          <h1>Super app</h1>
-          <p>Create your new account</p>
-          <div className="socialBtn">
-            <button className="emailBtn">Email</button>
-            <button className="emptyBtn">|</button>
-            <button className="googleBtn">Google</button>
-          </div>
-          <div className="inputDiv">
-            {/* <div> */}
-            <input
-              value={input.Name}
-              minLength={5}
-              required
-              onChange={handleInput}
-              name="Name"
-              className="inputBox"
-              placeholder="Name"
-            ></input>
-            {errorMessage.Name && (
-              <p
-                style={{
-                  color: "red",
-                  margin: "0px",
-                  marginTop: "10px",
-                  fontSize: "18px",
-                  paddingLeft: "20px",
-                }}
-              >
-                {errorMessage.Name}
-              </p>
-            )}
-            {/* </div> */}
-            <input
-              value={input.UserName}
-              minLength={5}
-              required
-              onChange={handleInput}
-              name="UserName"
-              className="inputBox"
-              placeholder="UserName"
-            ></input>
-            {errorMessage.UserName && (
-              <p
-                style={{
-                  color: "red",
-                  margin: "0px",
-                  marginTop: "10px",
-                  fontSize: "18px",
-                  paddingLeft: "20px",
-                }}
-              >
-                {errorMessage.UserName}
-              </p>
-            )}
-            <input
-              value={input.Email}
-              onChange={handleInput}
-              name="Email"
-              pattern="[a-z0-9._%+-]+@gmail\.com$"
-              required
-              className="inputBox"
-              placeholder="Email"
-            ></input>
-            {errorMessage.Email && (
-              <p
-                style={{
-                  color: "red",
-                  margin: "0px",
-                  marginTop: "10px",
-                  fontSize: "18px",
-                  paddingLeft: "20px",
-                }}
-              >
-                {errorMessage.Email}
-              </p>
-            )}
-
-            <input
-              value={input.Number}
-              onChange={handleInput}
-              type="number"
-              name="Number"
-              minLength={10}
-              maxLength={10}
-              className="inputBox"
-              placeholder="Mobile Number"
-            ></input>
-            {errorMessage.Number && (
-              <p
-                style={{
-                  color: "red",
-                  margin: "0px",
-                  marginTop: "10px",
-                  fontSize: "18px",
-                  paddingLeft: "20px",
-                }}
-              >
-                {errorMessage.Number}
-              </p>
-            )}
-
-            <div className="checkBoxDiv">
+        <form onSubmit={signUpHandler}>
+          <div className="createAccountDiv">
+            <h1>Super app</h1>
+            <p>Create your new account</p>
+            <div className="socialBtn">
+              <button className="emailBtn">Email</button>
+              <button className="emptyBtn">|</button>
+              <button className="googleBtn">Google</button>
+            </div>
+            <div className="inputDiv">
+              {/* <div> */}
               <input
-                onChange={handleInput}
+                value={input.Name}
+                minLength={5}
                 required
-                type="checkbox"
-                name="CheckBox"
-                checked={input.CheckBox}
-                value="Share my registration data with Superapp"
+                onChange={handleInput}
+                name="Name"
+                className="inputBox"
+                placeholder="Name"
               ></input>
-              {errorMessage.CheckBox && (
+              {errorMessage.Name && (
                 <p
                   style={{
                     color: "red",
@@ -241,29 +154,123 @@ const SignUp = () => {
                     paddingLeft: "20px",
                   }}
                 >
-                  {errorMessage.CheckBox}
+                  {errorMessage.Name}
                 </p>
               )}
-              <p>Share my registration data with Superapp</p>
+              {/* </div> */}
+              <input
+                value={input.UserName}
+                minLength={5}
+                required
+                onChange={handleInput}
+                name="UserName"
+                className="inputBox"
+                placeholder="UserName"
+              ></input>
+              {errorMessage.UserName && (
+                <p
+                  style={{
+                    color: "red",
+                    margin: "0px",
+                    marginTop: "10px",
+                    fontSize: "18px",
+                    paddingLeft: "20px",
+                  }}
+                >
+                  {errorMessage.UserName}
+                </p>
+              )}
+              <input
+                value={input.Email}
+                onChange={handleInput}
+                name="Email"
+                pattern="[a-z0-9._%+-]+@gmail\.com$"
+                required
+                className="inputBox"
+                placeholder="Email"
+              ></input>
+              {errorMessage.Email && (
+                <p
+                  style={{
+                    color: "red",
+                    margin: "0px",
+                    marginTop: "10px",
+                    fontSize: "18px",
+                    paddingLeft: "20px",
+                  }}
+                >
+                  {errorMessage.Email}
+                </p>
+              )}
+
+              <input
+                value={input.Number}
+                onChange={handleInput}
+                type="number"
+                inputmode="numeric"
+                name="Number"
+                minLength={10}
+                maxLength={10}
+                className="inputBox"
+                placeholder="Mobile Number"
+              ></input>
+              {errorMessage.Number && (
+                <p
+                  style={{
+                    color: "red",
+                    margin: "0px",
+                    marginTop: "10px",
+                    fontSize: "18px",
+                    paddingLeft: "20px",
+                  }}
+                >
+                  {errorMessage.Number}
+                </p>
+              )}
+
+              <div className="checkBoxDiv">
+                <input
+                  onChange={handleInput}
+                  required
+                  type="checkbox"
+                  name="CheckBox"
+                  checked={input.CheckBox}
+                  value="Share my registration data with Superapp"
+                ></input>
+                {errorMessage.CheckBox && (
+                  <p
+                    style={{
+                      color: "red",
+                      margin: "0px",
+                      marginTop: "10px",
+                      fontSize: "18px",
+                      paddingLeft: "20px",
+                    }}
+                  >
+                    {errorMessage.CheckBox}
+                  </p>
+                )}
+                <p>Share my registration data with Superapp</p>
+              </div>
+              {/* {errorMessage && <p>{errorMessage}</p>} */}
+              <button
+                disabled={DisableBtn}
+                // onClick={signUpHandler}
+                className="signUpBtn"
+              >
+                Sign Up
+              </button>
+              <p>
+                By clicking on Sign up. you agree to Superapp Terms and
+                Conditions of Use
+              </p>
+              <p>
+                To learn more about how Superapp collects, uses, shares and
+                protects your personal data please head Superapp Privacy Policy
+              </p>
             </div>
-            {/* {errorMessage && <p>{errorMessage}</p>} */}
-            <button
-              disabled={DisableBtn}
-              onClick={signUpHandler}
-              className="signUpBtn"
-            >
-              Sign Up
-            </button>
-            <p>
-              By clicking on Sign up. you agree to Superapp Terms and Conditions
-              of Use
-            </p>
-            <p>
-              To learn more about how Superapp collects, uses, shares and
-              protects your personal data please head Superapp Privacy Policy
-            </p>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
