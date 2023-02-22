@@ -1,0 +1,208 @@
+
+body{
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+} 
+
+.leftDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vh;
+    height: 100vh;
+    background-image: url(./image.png);
+}
+
+.accountDiv{
+    display: flex;
+    padding: 30px;
+    color: white;
+}
+.accountDiv>p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.loginBtn{
+    border-radius: 20px;
+    margin: 10px 20px 10px 40px;
+    padding: 0px 40px 0px 40px;
+    background-color: #72DB73;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+}
+.discoverDiv{
+    display: flex;
+    padding-left: 40px;
+}
+.discoverText{
+    font-size: 70px;
+    color: white;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+}
+
+.createAccountDiv{
+    display: flex;
+}
+.createAccountDiv>h1{ 
+    margin: 0px;
+    margin-top: 30px;
+    font-family: 'Single Day';
+    color: #72DB73;;
+}
+.rightDiv{
+    display: flex;
+    width: 100vh;
+    justify-content: center;
+    background-color: black;
+}
+.rightDiv>p{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    
+}
+.createAccountDiv{
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+.createAccountDiv>p{
+    
+    margin: 20px 20px 30px 20px;
+}
+.socialBtn{
+    color: black;
+}
+.emailBtn{
+    font-size: 30px;
+    background-color: black;
+    color: white;
+}
+.emptyBtn{
+    font-size: 30px;
+    background-color: black;
+    color: white;
+}
+.googleBtn{
+    font-size: 30px;
+    background-color: black;
+    color: white;
+}
+.inputDiv{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px 0px 40px;
+    margin: 0px 60px 0px 60px;
+    text-align: start;
+
+}
+.inputBox{
+    border: none;
+    padding: 15px 15px 15px 15px;
+
+    font-size: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: #292929;
+    color: #7C7C7C;;
+}
+.checkBoxDiv{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+.checkBoxDiv>input{
+    width: 30px;
+    margin-right: 20px;
+}
+.checkBoxDiv>p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    color: #7C7C7C;
+
+}
+.signUpBtn{
+    font-size: 25px;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #72DB73;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    color: white;
+}
+.termAndConditionDiv{
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.inputDiv>p{
+    margin-top: 10px;
+    font-size: 23px;
+    color: #7C7C7C;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+}
+@media only screen and (max-width: 1480px) {
+    .checkBoxDiv>p{
+       
+        font-size: 22px;
+       
+    
+    }
+    .inputDiv>p{
+        
+        font-size: 20px;
+    }
+        .discoverText{
+            font-size: 60px;
+        }
+  }
+  @media only screen and (max-width: 900px) {
+    .inputDiv{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+        
+  }
+  @media only screen and (max-width: 720px) {
+   
+    .container{
+        display: flex;
+        flex-direction: column;
+    } 
+    .rightDiv{
+        width: auto;
+        height: auto;
+    }
+    .leftDiv{
+        width: auto;
+        height: 50vh;
+    }
+}
+@media only screen and (max-width: 845px) {
+   
+    .loginBtn{
+        font-size: 20px;
+       
+    }
+}
+ 
