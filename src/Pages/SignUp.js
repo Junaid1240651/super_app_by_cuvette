@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./SignUp.moduel.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     Name: "",
     UserName: "",
@@ -104,6 +105,7 @@ const SignUp = () => {
       CheckBox: "",
     });
     setDisableBtn(true);
+    navigate("/home");
   }
   return (
     <div className="container">
@@ -245,9 +247,11 @@ const SignUp = () => {
                 <p>Share my registration data with Superapp</p>
               </div>
               {/* {errorMessage && <p>{errorMessage}</p>} */}
-              <Link className="signUpBtn" to="/Home">
-                <button disabled={DisableBtn}>Sign Up</button>
-              </Link>
+
+              <button className="signUpBtn" disabled={DisableBtn}>
+                SignUp
+              </button>
+
               <p>
                 By clicking on Sign up. you agree to Superapp Terms and
                 Conditions of Use

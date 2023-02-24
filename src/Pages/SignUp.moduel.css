@@ -145,18 +145,15 @@ body{
     padding: 10px;
     background-color: #72DB73;
     text-decoration: none;
-
-}
-.signUpBtn>button{
-    background-color: #72DB73;
     border: none;
     font-size: 25px;
-text-decoration: none;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
     color: white;
+
 }
+
 .termAndConditionDiv{
     font-size: 20px;
     display: flex;
