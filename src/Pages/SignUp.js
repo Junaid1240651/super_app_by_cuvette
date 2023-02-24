@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./SignUp.moduel.css";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [input, setInput] = useState({
@@ -20,7 +21,7 @@ const SignUp = () => {
   const [DisableBtn, setDisableBtn] = useState(true);
 
   function handleInput(e) {
-    // console.log(input);
+    // localStorage.setItem("Select Music", "newArray");
     const { name, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
     if (!name == "") {
@@ -87,13 +88,7 @@ const SignUp = () => {
   }
   function signUpHandler(event) {
     event.preventDefault();
-    // if (!input.CheckBox) {
-    //   setErrorMessage({
-    //     ...errorMessage,
-    //     agree: "You must agree to the terms and conditions.",
-    //   });
-    //   return;
-    // }
+
     setInput({
       Name: "",
       UserName: "",
@@ -109,9 +104,7 @@ const SignUp = () => {
       CheckBox: "",
     });
     setDisableBtn(true);
-    alert("Successfully registered");
   }
-  console.log(input);
   return (
     <div className="container">
       <div className="leftDiv">
@@ -157,7 +150,6 @@ const SignUp = () => {
                   {errorMessage.Name}
                 </p>
               )}
-              {/* </div> */}
               <input
                 value={input.UserName}
                 minLength={5}
@@ -253,13 +245,9 @@ const SignUp = () => {
                 <p>Share my registration data with Superapp</p>
               </div>
               {/* {errorMessage && <p>{errorMessage}</p>} */}
-              <button
-                disabled={DisableBtn}
-                // onClick={signUpHandler}
-                className="signUpBtn"
-              >
-                Sign Up
-              </button>
+              <Link className="signUpBtn" to="/Home">
+                <button disabled={DisableBtn}>Sign Up</button>
+              </Link>
               <p>
                 By clicking on Sign up. you agree to Superapp Terms and
                 Conditions of Use
