@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Select_Music.moduel.css";
+import { useNavigate } from "react-router-dom";
 import Image2 from ".././images/image2.png";
 import Image3 from ".././images/image3.png";
 import Image4 from ".././images/image4.png";
@@ -12,6 +13,8 @@ import Image10 from ".././images/image10.png";
 const Select_Music = () => {
   const [newArray, setNewArray] = useState([]);
   const [clicked, setClicked] = useState(false);
+  const navigate = useNavigate();
+
   let arr = [
     {
       id: 1,
@@ -94,10 +97,11 @@ const Select_Music = () => {
   }
 
   function nextBtnHandler() {
-    console.log(newArray.length);
+    // event.preventDefault();
 
     if (!newArray.length == 0) {
-      localStorage.setItem("Select Music", newArray);
+      localStorage.setItem("Select Music", JSON.stringify(newArray));
+      navigate("/Home");
     } else {
       alert("Please select at least one Music Category");
     }

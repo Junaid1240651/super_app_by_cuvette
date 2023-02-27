@@ -105,7 +105,9 @@ const SignUp = () => {
       CheckBox: "",
     });
     setDisableBtn(true);
-    navigate("/home");
+    navigate("/categories");
+    localStorage.setItem("User Details", JSON.stringify([input]));
+    console.log(input);
   }
   return (
     <div className="container">

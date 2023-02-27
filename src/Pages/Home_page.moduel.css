@@ -1,0 +1,509 @@
+.cc{
+    display: flex;
+    justify-content: space-evenly;
+}
+.LeftDiv{
+    display: flex;
+    padding: 30px;
+    justify-content: space-evenly;
+
+}
+.LeftDivInnerDiv{
+    display: flex;
+    flex-direction: column;
+}
+.LeftDivInnerDivFirst{
+    display: flex;
+    margin-top: 20px;
+    background-color: #5746EA;
+    border-radius: 20px;
+}
+.LeftDivInnerDivFirst>img{
+    padding: 20px 15px 10px 30px;
+}
+.userDetailsInner{
+    padding: 10px 20px 20px 20px;
+}
+.userName{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36.9467px;
+}
+.userEmail{
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36.9467px;
+}
+.UserUserName{
+    font-family: 'Roboto';
+    font-style: normal;
+    margin: 0px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 72.1341px;
+}
+.userDetails{
+    display: flex;
+}
+
+.userSelectMusic{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 20px 20px 20px;
+
+}
+.userSelectMusicInnerDiv{
+     display: flex;
+    background-color: #9F94FF;
+    padding: 10px 10px 10px 10px;
+    margin-right: 15px;
+    margin-top: 15px;
+    border-radius: 20px;
+    justify-content: space-around;
+
+}
+.userSelectMusicInnerDiv>p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28.1499px;
+    letter-spacing: 0.02em;
+    margin: 0px;
+    margin-right: 15px;
+}
+.LeftDivInnerDivSecond{
+    border-radius: 18px;
+    background: #FF4ADE;
+    margin-top: 20px;
+}
+.al{
+     display: flex;
+     margin: 0px;
+     border-bottom-right-radius: 15px;
+     border-bottom-left-radius: 15px;
+
+     background-color: #101744 ;
+     justify-content: space-around;
+}
+.dateTime{
+   display: flex; 
+   padding: 10px;
+   justify-content: space-around;
+}
+.cloudInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cloudInfo>img{
+    width: 100%;
+}
+.cloudInfo>p{
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 31.4322px;
+}
+
+.degreeC{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.degreeC>p:nth-child(1){
+    font-style: normal;
+    font-family: 'Roboto';
+    font-size: 78.2243px;
+    font-weight: 400;
+}
+.degreeC>p:nth-child(1){
+    margin: 0px;
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 78.2243px;
+    }
+.degreeC>p:nth-child(2){
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24.5991px;
+}
+.degreeC>p:nth-child(3){
+    font-family: 'Roboto';
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24.5991px;
+    margin:  0px 0px 0px 0px;
+    
+}
+.slashDiv{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 10%;
+    font-size: 200px;
+    font-weight: 100px;
+
+}
+.windInfo>p:nth-child(1){
+    text-align: center;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24.5991px;
+}
+.windInfo>p:nth-child(2){
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24.5991px;
+}
+.windInfo>p:nth-child(3){
+    font-family: 'Roboto';
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24.5991px;
+}
+.windInfo>p:nth-child(4){
+    font-family: 'Roboto';
+    text-align: center;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24.5991px;
+}
+.RightDiv{
+    display: flex;
+    border-radius: 50px;
+    padding: 30px;
+
+    width: 47vh;
+}
+.RightDivFirst{
+    border-radius: 15px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    background-image: url(.././images/mountain.png);
+}
+.climbDiv{
+    display: flex;
+    flex-direction: column;
+    background-color:  rgba(0, 0, 0, 0.74);
+}
+
+.climb{
+    padding: 20px 20px 0px 20px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 32px;
+    letter-spacing: 0.02em;
+    margin: 0px;
+
+}
+
+.date{
+    display: flex;
+    justify-content: space-around;
+}
+.climbDiv>p:nth-child(1){
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 32px;
+    letter-spacing: 0.02em;
+}
+.climbDiv>p:nth-child(2){
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18.2493px;
+    letter-spacing: 0.02em;
+}
+.climbDiv>p:nth-child(3){
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18.2493px;
+    letter-spacing: 0.02em;
+}
+.climbDiv>p:nth-child(4){
+   
+   
+}
+.climatePera{
+    padding: 20px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin-bottom: 0px;
+    color: black;
+    background-color: white;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18.25px;
+    text-align: justify;
+}
+
+
+@media only screen and (max-width: 1050px) {
+    .degreeC>p:nth-child(1){
+        padding-top: 15px;
+        font-size: 50px;
+      
+    }
+    .climbDiv>p:nth-child(1) {
+        font-size: 25px;
+    }
+    .climbDiv>p:nth-child(3) {
+    font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .UserUserName{
+        margin-bottom: 20px;
+        font-weight: 500;
+        font-size: 70px;
+    }
+    .userName{
+ 
+        font-weight: 400;
+        font-size: 30px;
+    }
+    .userEmail{
+        
+
+        font-weight: 400;
+        font-size: 35px;
+    }
+ 
+    .climbDiv>p:nth-child(1) {
+        font-size: 20px;
+    }
+    .climbDiv>p:nth-child(3) {
+    font-size: 13px;
+    }
+}
+@media only screen and (max-width: 970px) {
+  
+    .degreeC>p:nth-child(1){
+        padding-top: 15px;
+        font-size: 50px;
+      
+    }
+    .windInfo>p:nth-child(1){
+        padding-top: 15px;
+        /* font-size: 210px; */
+    }
+    .climbDiv>p:nth-child(1) {
+        font-size: 20px;
+    }
+    .climbDiv>p:nth-child(3) {
+    font-size: 10px;
+    }
+}
+@media only screen and (max-width: 880px) {
+
+
+ .UserUserName{
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 50px;
+}
+.userName{
+
+    font-weight: 400;
+    font-size: 30px;
+}
+.userEmail{
+    
+
+    font-weight: 400;
+    font-size: 25px;
+}
+.userSelectMusicInnerDiv>p{
+    font-size: 15px;
+    margin-right: 5px;
+}
+}
+@media only screen and (max-width: 800px) {
+
+    .LeftDivInnerDivFirst>img{
+        padding: 0px;
+        padding: 20px 0px 20px 20px;
+    }
+    .UserUserName{
+        margin-bottom: 20px;
+        font-weight: 500;
+        font-size: 30px;
+    }
+    .userName{
+    
+        font-weight: 400;
+        font-size: 20px;
+    }
+    .userEmail{
+        
+    
+        font-weight: 400;
+        font-size: 20px;
+    }
+    .userSelectMusicInnerDiv>p{
+        font-size: 9px;
+    }
+    .userDetailsInner{
+        margin-top: 50px;
+    }
+    .userSelectMusicInnerDiv>p{
+        font-size: 14px;
+        margin-right: 5px;
+    }
+   }
+   @media only screen and (max-width: 700px) {
+    .LeftDiv{
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .RightDiv{
+        padding-left: 0px;
+    }
+    .LeftDivInnerDiv{
+        width: 80%;
+    }
+    .LeftDivInnerDivFirst>img{
+        width: 25%;
+        padding: 0px;
+        padding: 20px 0px 20px 20px;
+    }
+    .LeftDivInnerDivFirst{
+        padding-right: 30px;
+    }
+    .UserUserName{
+        margin-bottom: 20px;
+        font-weight: 500;
+        font-size: 30px;
+    }
+    .userName{
+    
+        font-weight: 400;
+        font-size: 20px;
+    }
+    .userEmail{
+        
+        font-weight: 400;
+        font-size: 20px;
+    }
+    .userSelectMusicInnerDiv>p{
+        font-size: 9px;
+    }
+    .userDetailsInner{
+        margin-top: 50px;
+    }
+    .userSelectMusicInnerDiv>p{
+        font-size: 14px;
+        margin-right: 5px;
+    }
+    .cloudInfo{
+        width: 10vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .cloudInfo>p{
+        font-size: 15px;
+      }
+  .windInfo>p:nth-child(1){
+    font-size: 20px;
+    margin-top: 40px;
+
+
+  }
+  .windInfo>p:nth-child(2){
+    font-size: 20px;
+    margin: 0px;
+    margin-bottom: 10px;
+
+  }
+  .windInfo>p:nth-child(3){
+    font-size: 20px;
+    margin: 0px;
+    margin-bottom: 10px;
+
+
+  }
+  .windInfo>p:nth-child(4){
+    font-size: 15px;
+    margin: 0px;
+
+  }
+  .slashDiv{
+    width: 12%;
+  }
+    .cloudInfoo>img{
+        width: 10%
+    }
+    .windInfo{
+        font-size: 30px;
+    }
+    .degreeC{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .degreeC>p:nth-child(1){
+        font-size: 30px;
+        margin: 0px;
+
+      
+    }
+    .degreeC>p:nth-child(2){
+        font-size: 20px;
+        margin: 10px 0px 10px 0px;
+
+
+      
+    }
+    .al{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .degreeC>p:nth-child(3){
+        font-size: 20px;
+        margin: 0px;
+
+      
+    }
+    .userEmail{
+        font-size: 15px;
+    }
+    .userName{
+        font-size: 18px;
+    }
+    .UserUserName{
+        font-size: 18px;
+    }
+   }
+
+   @media only screen and (max-width: 450px) {
+    .RightDiv{
+        width: 25%;
+    }
+   }
+   @media only screen and (max-width: 400px) {
+    .LeftDiv{
+        width: 80%;
+    }
+   }
