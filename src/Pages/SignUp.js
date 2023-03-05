@@ -19,75 +19,62 @@ const SignUp = () => {
     CheckBox: "",
   });
 
-  const [DisableBtn, setDisableBtn] = useState(true);
-
   function handleInput(e) {
-    // localStorage.setItem("Select Music", "newArray");
     const { name, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
-    if (!name == "") {
+
+    if (!value == "") {
       setInput({ ...input, CheckBox: false });
     }
+    // if (/^[0-9]*$/.test(input.Number)) {
+    //   console.log(newPhoneNumber);
+    // } else {
+    //   console.log("error");
+    // }
     setInput((prevValue) => {
       return {
         ...prevValue,
         [name]: newValue,
       };
     });
-
-    if (!value && type !== "checkbox") {
+    if (name === "Name" && value.length > 5) {
       setErrorMessage({
         ...errorMessage,
-        Chec: "This field is required.",
+        Name: "",
       });
-      setDisableBtn(true);
-    } else if (name === "Name" && value.length < 5) {
+    } else if (name === "UserName" && value.length > 5) {
       setErrorMessage({
         ...errorMessage,
-        Name: "Name must be at least 5 characters long.",
+        UserName: "",
       });
-      setDisableBtn(true);
-    } else if (name === "UserName" && value.length < 5) {
+    } else if (name === "Email" && value.endsWith("@gmail.com")) {
       setErrorMessage({
         ...errorMessage,
-        UserName: "Name must be at least 5 characters long.",
+        Email: "",
       });
-      setDisableBtn(true);
-    } else if (name === "Email" && !value.endsWith("@gmail.com")) {
+    } else if (name === "Number" && value.length === 10) {
       setErrorMessage({
         ...errorMessage,
-        Email: "Email must end with @gmail.com",
-      });
-      setDisableBtn(true);
-    } else if (name === "Number" && value.length !== 10) {
-      setErrorMessage({
-        ...errorMessage,
-        Number: "Phone number must be 10 digits long",
-      });
-      setDisableBtn(true);
-    } else {
-      setErrorMessage({
-        ...errorMessage,
-        [name]: "",
+        Number: "",
       });
     }
-
-    setDisableBtn(
-      !(
-        input.Name &&
-        input.UserName &&
-        input.Email &&
-        input.Number &&
-        !input.CheckBox &&
-        errorMessage.Name == "" &&
-        errorMessage.UserName == "" &&
-        errorMessage.Email == "" &&
-        errorMessage.Number == "" &&
-        errorMessage.UserName == ""
-      )
-    );
   }
-  function signUpHandler(event) {
+  function signUpHandler() {
+    if (
+      input.Name.length < 5 &&
+      input.UserName.length < 5 &&
+      !input.Email.endsWith("@gmail.com") &&
+      input.Number.length < 10
+    ) {
+      setErrorMessage({
+        Name: "Name must be at least 5 characters long.",
+        UserName: "UserName must be at least 5 characters long.",
+        Email: "Email must end with @gmail.com",
+        Number: "Phone number must be 10 digits long",
+      });
+    }
+  }
+  function submitForm(event) {
     event.preventDefault();
 
     setInput({
@@ -104,7 +91,6 @@ const SignUp = () => {
       Number: "",
       CheckBox: "",
     });
-    setDisableBtn(true);
     navigate("/categories");
     localStorage.setItem("User Details", JSON.stringify([input]));
     console.log(input);
@@ -121,7 +107,7 @@ const SignUp = () => {
         </div>
       </div>
       <div className="rightDiv">
-        <form onSubmit={signUpHandler}>
+        <form onSubmit={submitForm}>
           <div className="createAccountDiv">
             <h1>Super app</h1>
             <p>Create your new account</p>
@@ -141,7 +127,7 @@ const SignUp = () => {
                 className="inputBox"
                 placeholder="Name"
               ></input>
-              {errorMessage.Name && (
+              {errorMessage ? (
                 <p
                   style={{
                     color: "red",
@@ -153,6 +139,8 @@ const SignUp = () => {
                 >
                   {errorMessage.Name}
                 </p>
+              ) : (
+                <p></p>
               )}
               <input
                 value={input.UserName}
@@ -163,7 +151,7 @@ const SignUp = () => {
                 className="inputBox"
                 placeholder="UserName"
               ></input>
-              {errorMessage.UserName && (
+              {errorMessage ? (
                 <p
                   style={{
                     color: "red",
@@ -175,17 +163,20 @@ const SignUp = () => {
                 >
                   {errorMessage.UserName}
                 </p>
+              ) : (
+                <p></p>
               )}
               <input
                 value={input.Email}
                 onChange={handleInput}
+                type="email"
                 name="Email"
                 pattern="[a-z0-9._%+-]+@gmail\.com$"
                 required
                 className="inputBox"
                 placeholder="Email"
               ></input>
-              {errorMessage.Email && (
+              {errorMessage ? (
                 <p
                   style={{
                     color: "red",
@@ -197,6 +188,8 @@ const SignUp = () => {
                 >
                   {errorMessage.Email}
                 </p>
+              ) : (
+                setErrorMessage("")
               )}
 
               <input
@@ -205,12 +198,14 @@ const SignUp = () => {
                 type="number"
                 inputmode="numeric"
                 name="Number"
+                pattern="[0-9]"
                 minLength={10}
                 maxLength={10}
+                required
                 className="inputBox"
                 placeholder="Mobile Number"
               ></input>
-              {errorMessage.Number && (
+              {errorMessage ? (
                 <p
                   style={{
                     color: "red",
@@ -222,6 +217,8 @@ const SignUp = () => {
                 >
                   {errorMessage.Number}
                 </p>
+              ) : (
+                <p></p>
               )}
 
               <div className="checkBoxDiv">
@@ -233,24 +230,11 @@ const SignUp = () => {
                   checked={input.CheckBox}
                   value="Share my registration data with Superapp"
                 ></input>
-                {errorMessage.CheckBox && (
-                  <p
-                    style={{
-                      color: "red",
-                      margin: "0px",
-                      marginTop: "10px",
-                      fontSize: "18px",
-                      paddingLeft: "20px",
-                    }}
-                  >
-                    {errorMessage.CheckBox}
-                  </p>
-                )}
+
                 <p>Share my registration data with Superapp</p>
               </div>
-              {/* {errorMessage && <p>{errorMessage}</p>} */}
 
-              <button className="signUpBtn" disabled={DisableBtn}>
+              <button className="signUpBtn" onClick={signUpHandler}>
                 SignUp
               </button>
 

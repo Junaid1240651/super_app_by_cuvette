@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import "./Select_Music.moduel.css";
 import { useNavigate } from "react-router-dom";
-import Image2 from ".././images/image2.png";
-import Image3 from ".././images/image3.png";
-import Image4 from ".././images/image4.png";
-import Image5 from ".././images/image5.png";
-import Image6 from ".././images/image6.png";
-import Image7 from ".././images/image7.png";
-import Image8 from ".././images/image8.png";
-import Image9 from ".././images/image9.png";
-import Image10 from ".././images/image10.png";
+import Action from ".././images/Action.png";
+import Drama from ".././images/Drama.png";
+import Romance from ".././images/Romance.png";
+import Thriller from ".././images/Thriller.png";
+import Western from ".././images/Western.png";
+import Horror from ".././images/Horror.png";
+import Fantasy from ".././images/Fantasy.png";
+import Music from ".././images/Music.png";
+import Fiction from ".././images/Fiction.png";
 const Select_Music = () => {
   const [newArray, setNewArray] = useState([]);
   const [clicked, setClicked] = useState(false);
@@ -20,61 +20,61 @@ const Select_Music = () => {
       id: 1,
       color: "#FF5209",
       text: "Action",
-      image: Image2,
+      image: Action,
     },
     {
       id: 2,
       color: "#D7A4FF",
 
       text: "Drama",
-      image: Image3,
+      image: Drama,
     },
     {
       id: 3,
       color: "#11B800",
       text: "Romance",
-      image: Image4,
+      image: Romance,
     },
     {
       id: 4,
       color: "#84C2FF",
 
       text: "Thriller",
-      image: Image5,
+      image: Thriller,
     },
     {
       id: 5,
       color: "#902500",
       text: "Western",
-      image: Image6,
+      image: Western,
     },
     {
       id: 6,
       color: "#7358FF",
 
       text: "Horror",
-      image: Image7,
+      image: Horror,
     },
     {
       id: 7,
       color: "#FF4ADE",
 
       text: "Fantasty",
-      image: Image8,
+      image: Fantasy,
     },
     {
       id: 8,
       color: "#E61E32",
 
       text: "Music",
-      image: Image9,
+      image: Music,
     },
     {
       id: 9,
       color: "#6CD061",
 
       text: "Fiction",
-      image: Image10,
+      image: Fiction,
     },
   ];
 
@@ -101,7 +101,7 @@ const Select_Music = () => {
 
     if (!newArray.length == 0) {
       localStorage.setItem("Select Music", JSON.stringify(newArray));
-      navigate("/Home");
+      navigate("/Dashboard");
     } else {
       alert("Please select at least one Music Category");
     }

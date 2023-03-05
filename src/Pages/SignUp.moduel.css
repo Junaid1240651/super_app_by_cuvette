@@ -8,6 +8,7 @@ body{
 .container{
     display: flex;
     justify-content: space-around;
+
 } 
 
 .leftDiv{
@@ -147,6 +148,7 @@ body{
     text-decoration: none;
     border: none;
     font-size: 25px;
+    cursor: pointer;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
@@ -177,6 +179,13 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+::-webkit-scrollbar-thumb {
+    background: black; 
+    border-radius: 10px;
+    padding-right: 20px;
+  }
+
 @media only screen and (max-width: 1480px) {
     .checkBoxDiv>p{
        
