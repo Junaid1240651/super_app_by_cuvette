@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Home_Page.moduel.css";
+import "./Home_page.moduel.css";
 import profile from ".././images/profile.png";
 
 const Home_Page = () => {
